@@ -3,7 +3,7 @@ Cosmological 21cm signal modelling with `tensorflow`
 
 ## Version
 
-:Version: 1.0
+Version: 1.0
 
 ## Overview
 
