@@ -1,4 +1,5 @@
-
+import numpy as np
+import sklearn.externals.joblib
 
 def get_data(z_f = '../data/zData_090219.txt', p_f = '../data/PT_v4_test.txt', s_f = '../data/T21data_v4_test.txt'):
 	"""
@@ -10,7 +11,7 @@ def get_data(z_f = '../data/zData_090219.txt', p_f = '../data/PT_v4_test.txt', s
 	z = np.genfromtxt(z_f) #uses same redshift binning as first datasets
 	n_z = len(z) #136
 	par = np.genfromtxt(p_f)
-	phys_bool_a = par[:, -1] / par[:, 0] < 40000. #physical values according to anastasia
+	phys_bool_a = par[:, -1] / par[:, 0] < 40000. #physical values according to cohen
 	par = par[phys_bool_a, :] #physical
 	pars = np.repeat(par, n_z, axis=0)
 	twenty_one = np.genfromtxt(s_f)
@@ -27,7 +28,7 @@ def scale_data(x, y, x_scale_f = '../saved_models/scalers/9_params_21_2_x_scaler
 	scale inputs/output of model using same transformation used in training.
 	Files should contain serialised sklearn scaler objects
 	par_slice denotes subset of cosmological parameters used in model. By default
-	model ignores zeta as input, as anastasia's paper also didn't use it
+	model ignores zeta as input, as cohen's paper also didn't use it
 	"""
 	x_scaler = sklearn.externals.joblib.load(x_scale_f)
 	y_scaler = sklearn.externals.joblib.load(y_scale_f)

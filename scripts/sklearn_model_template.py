@@ -30,25 +30,25 @@ optimiser = 'adam'
 model = sklearn.neural_network.MLPRegressor(hidden_layer_sizes=layer_sizes, activation=activation, solver=optimiser, alpha=0.000, batch_size=batch_num, learning_rate='constant', learning_rate_init=0.01, power_t=0.5, max_iter=epochs, shuffle=True, random_state=None, tol=0.0001, verbose=True, warm_start=False, momentum=0.9, nesterovs_momentum=True, early_stopping=False, validation_fraction=0., beta_1=0.9, beta_2=0.999, epsilon=1e-08, n_iter_no_change=1000)
 
 #output information about run
-print "sklearn model run with following data/parameters:"
-print "nn name = "
-print nn_name
-print "x_input = "
-print x_input
-print "y_input = "
-print y_input
-print "layer sizes = "
-print layer_sizes
-print "number of epochs = "
-print epochs
-print "m = "
-print m
-print "batch number = "
-print batch_num
-print "activation type = "
-print activation
-print "optimiser type = "
-print optimiser
+print("sklearn model run with following data/parameters:")
+print("nn name = ")
+print(nn_name)
+print("x_input = ")
+print(x_input)
+print("y_input = ")
+print(y_input)
+print("layer sizes = ")
+print(layer_sizes)
+print("number of epochs = ")
+print(epochs)
+print("m = ")
+print(m)
+print("batch number = ")
+print(batch_num)
+print("activation type = ")
+print(activation)
+print("optimiser type = ")
+print(optimiser)
 
 start_time = time.time()
 
@@ -60,5 +60,5 @@ pickle.dump(model, open("./saved_models/sklearn/" + nn_name + ".sav", 'wb'))
 
 end_time = time.time()
 
-print "model fitting and saving to file took " + str(end_time - start_time) + " seconds or " + str((end_time - start_time) / 3600.) + " hours"
+print("model fitting and saving to file took " + str(end_time - start_time) + " seconds or " + str((end_time - start_time) / 3600.) + " hours"
  

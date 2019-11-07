@@ -58,10 +58,10 @@ def get_epoch_from_output(nn_name, initial_epoch, epochs, n_save):
 	last_epoch = np.max(np.array(epoch_ns, dtype = np.int))
 	resume_epoch = (last_epoch // n_save) * n_save
 	if last_epoch == epochs:
-		print "saved model has been trained up to specified number of epochs (" + str(epochs) + ")"
+		print("saved model has been trained up to specified number of epochs (" + str(epochs) + ")")
 	else:
-		print "saved model has been trained up to epoch " + str(last_epoch)
-		print "resuming from last save point which was at epoch " + str(resume_epoch)
+		print("saved model has been trained up to epoch " + str(last_epoch))
+		print("resuming from last save point which was at epoch " + str(resume_epoch))
 	return resume_epoch
 
 def reset_weights(model):

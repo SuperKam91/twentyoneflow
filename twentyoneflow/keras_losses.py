@@ -125,12 +125,12 @@ if __name__ == '__main__':
 	y_t_t = tf.convert_to_tensor(y_true)
 	y_p_t = tf.convert_to_tensor(y_pred)
 	a = twenty_one_cm_rmse_ts(y_t_t, y_p_t)
-	print a.eval(session = tf.keras.backend.get_session())
+	print(a.eval(session = tf.keras.backend.get_session()))
 	b = twenty_one_cm_rmse_ts_mean(y_t_t, y_p_t)
-	print b.eval(session = tf.keras.backend.get_session())
+	print(b.eval(session = tf.keras.backend.get_session()))
 	c = twenty_one_cm_rmse_higher_order_ts(0., 1., 136, 136 * 5)(y_t_t, y_p_t)
-	print c.eval(session = tf.keras.backend.get_session())
+	print(c.eval(session = tf.keras.backend.get_session()))
 	d = twenty_one_cm_rmse_higher_order_ts_mean(0., 1., 136, 136 * 5)(y_t_t, y_p_t)
-	print d.eval(session = tf.keras.backend.get_session())
+	print(d.eval(session = tf.keras.backend.get_session()))
 
 

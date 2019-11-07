@@ -341,14 +341,14 @@ def twenty_one_cm_rmse_ts_higher_order(mean, var, n_z, out = False):
 		y_t = np.sqrt(var) * y_true + mean
 		y_p = np.sqrt(var) * y_pred + mean
 		if out:
-			print "y_true (unscaled) mean"
-			print y_t.mean()
-			print "y_pred (unscaled) mean"
-			print y_p.mean()
-			print "y_true (unscaled) variance"
-			print y_t.var()
-			print "y_pred (unscaled) variance"
-			print y_p.var()
+			print("y_true (unscaled) mean")
+			print(y_t.mean())
+			print("y_pred (unscaled) mean")
+			print(y_p.mean())
+			print("y_true (unscaled) variance")
+			print(y_t.var())
+			print("y_pred (unscaled) variance")
+			print(y_p.var())
 		errs = []
 		for i in range(y_pred.shape[0] / n_z - 1):
 			errs.append(np.sqrt(np.mean((y_t[i * n_z:(i + 1) * n_z] - y_p[i * n_z:(i + 1) * n_z])**2.)) / np.max(np.abs(y_t[i * n_z:(i + 1) * n_z])))
@@ -365,7 +365,7 @@ def twenty_one_cm_rmse_ts_mean_higher_order(mean, var, n_z, out = False):
 	def twenty_one_cm_rmse_ts_mean(y_true, y_pred):
 		m = np.mean(higher_order_f(y_true, y_pred))
 		if out:
-			print m
+			print(m)
 		return m
 	return twenty_one_cm_rmse_ts_mean
 
@@ -373,9 +373,9 @@ if __name__ == '__main__':
 	np.random.seed(1)
 	y_true = np.arange(3*2)
 	y_pred = np.arange(start = 3*2, stop = 3*2*2)
-	print twenty_one_cm_rmse_ts(y_true, y_pred, 3) #[3, 1.2]
-	print twenty_one_cm_rmse_ts_mean(y_true, y_pred, 3) #2.1
+	print(twenty_one_cm_rmse_ts(y_true, y_pred, 3)) #[3, 1.2]
+	print(twenty_one_cm_rmse_ts_mean(y_true, y_pred, 3)) #2.1
 	t1 = twenty_one_cm_rmse_ts_higher_order(0., 1., 3)
 	t2 = twenty_one_cm_rmse_ts_mean_higher_order(y_true, y_pred, 0., 1., 3)
-	print t1(y_true, y_pred) #[3, 1.2]
-	print t2 #2.1
+	print(t1(y_true, y_pred)) #[3, 1.2]
+	print(t2) #2.1

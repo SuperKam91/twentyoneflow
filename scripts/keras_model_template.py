@@ -75,55 +75,55 @@ save_callback = tf.keras.callbacks.ModelCheckpoint(save_file, period = n_save)
 #check if model already exists
 if os.path.isfile(save_file):
 	#if so, load in saved model state and resume training on that
-	print "saved model found. loading in and resuming training on this model"
-	print "note, training will resume from last (saved) epoch found in output file"
+	print("saved model found. loading in and resuming training on this model"
+	print("note, training will resume from last (saved) epoch found in output file"
 	initial_epoch = kt.get_epoch_from_output(nn_name, initial_epoch, epochs, n_save)
 else:
 	#output information about run
-	print "keras model run with following data/parameters:"
-	print "nn name = "
-	print nn_name
-	print "x_input = "
-	print x_input
-	print "y_input = "
-	print y_input
-	print "layer sizes = "
-	print layer_sizes
-	print "number of epochs = "
-	print epochs
-	print "m = "
-	print m
-	print "batch number = "
-	print batch_num
-	print "dropout reg = "
-	print dropout_reg
-	print "activation type = "
-	print activation
-	print "model type = "
-	print model
-	print "mean of unscaled ouput = "
-	print mean
-	print "variance of unscaled output = "
-	print var
-	print "number of points per timeseries (number of z bins) = "
-	print n_z
-	print "loss functions = "
-	print losses
-	print "metric functions = "
-	print metrics
-	print "optimiser = "
-	print optimiser
-	print "optimiser lr = "
-	print lr
-	print "optimiser beta_1 = "
-	print beta_1
-	print "optimiser beta_2 = "
-	print beta_2
-	print "model summary = "
-	print model.summary()
-	print "starting epoch = "
-	print initial_epoch
-	print ""
+	print("keras model run with following data/parameters:")
+	print("nn name = ")
+	print(nn_name)
+	print("x_input = ")
+	print(x_input)
+	print("y_input = ")
+	print(y_input)
+	print("layer sizes = ")
+	print(layer_sizes)
+	print("number of epochs = ")
+	print(epochs)
+	print("m = ")
+	print(m)
+	print("batch number = ")
+	print(batch_num)
+	print("dropout reg = ")
+	print(dropout_reg)
+	print("activation type = ")
+	print(activation)
+	print("model type = ")
+	print(model)
+	print("mean of unscaled ouput = ")
+	print(mean)
+	print("variance of unscaled output = ")
+	print(var)
+	print("number of points per timeseries (number of z bins) = ")
+	print(n_z)
+	print("loss functions = ")
+	print(losses)
+	print("metric functions = ")
+	print(metrics)
+	print("optimiser = ")
+	print(optimiser)
+	print("optimiser lr = ")
+	print(lr)
+	print("optimiser beta_1 = ")
+	print(beta_1)
+	print("optimiser beta_2 = ")
+	print(beta_2)
+	print("model summary = ")
+	print(model.summary())
+	print("starting epoch = ")
+	print(initial_epoch)
+	print("")
 
 start_time = time.time()
 
@@ -135,4 +135,4 @@ model.save(save_file)
 
 end_time = time.time()
 
-print "model fitting and saving to file took " + str(end_time - start_time) + " seconds or " + str((end_time - start_time) / 3600.) + " hours"
+print("model fitting and saving to file took " + str(end_time - start_time) + " seconds or " + str((end_time - start_time) / 3600.) + " hours"

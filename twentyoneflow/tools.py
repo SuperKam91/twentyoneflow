@@ -409,8 +409,8 @@ if __name__ == '__main__':
 	num_outputs = 2
 	m_trainable_arr = [False, False, True]
 	b_trainable_arr = [False, True, False]
-	print calc_num_weights3(num_inputs, layer_sizes, num_outputs, m_trainable_arr, b_trainable_arr)
+	print(calc_num_weights3(num_inputs, layer_sizes, num_outputs, m_trainable_arr, b_trainable_arr))
 	weight_shapes = get_weight_shapes3(num_inputs, layer_sizes, num_outputs, m_trainable_arr, b_trainable_arr)
-	print get_weight_shapes3(num_inputs, layer_sizes, num_outputs, m_trainable_arr, b_trainable_arr)
-	print calc_num_weights_layers3(weight_shapes, m_trainable_arr, b_trainable_arr)
-	print get_degen_dependence_lengths(weight_shapes, independent = False)
+	print(get_weight_shapes3(num_inputs, layer_sizes, num_outputs, m_trainable_arr, b_trainable_arr))
+	print(calc_num_weights_layers3(weight_shapes, m_trainable_arr, b_trainable_arr))
+	print(get_degen_dependence_lengths(weight_shapes, independent = False))
