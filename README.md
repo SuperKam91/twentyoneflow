@@ -12,8 +12,14 @@ Version: 1.0
 An example of using pre-trained models to make predictions can be found in `notebooks/example.ipynb`.
 
 NOTE: All training of models in this repo was done using the 21cm cosomology training data found at: 
-Furthermore, `example.ipynb` uses the 21cm cosmology test data available at: https://zenodo.org/record/3530920#.XcRlKjP7QuU.
-These two datasets were obtained from randomly subsampling a master dataset.
+
+https://zenodo.org/record/3532141#.XcSg7NHLc5k
+
+Furthermore, `example.ipynb` uses the 21cm cosmology test data available at: 
+
+https://zenodo.org/record/3530920#.XcRlKjP7QuU
+
+These two datasets were obtained from randomly subsampling a dataset which forms their union.
 
 The pre-trained networks can be found in `saved_models/keras/`, while the preprocessing scalers are in `saved_models/scalers/`.
 
@@ -27,11 +33,11 @@ This package was developed and tested using `python 2.7`, but should be compatib
 
 ## Installation
 
-### Pip install
+### Pip install from PyPi
 
 Coming soon.
 
-### git
+### git install
 
 No installation of `twentyoneflow` is strictly necessary, one can simply clone the repo:
 
@@ -41,9 +47,17 @@ and run their code from there, or add the location of the directory to their PYT
 Note however that one must ensure that all the required packages are installed by running `pip install -r requirements.txt` from
 the root the directory.
 
-Alternatively, one can run `python setup.py install` or `pip install .` from the root of the repo to install the base requirements (i.e. those in `requirements.txt`) as well as the `twentyoneflow` package.
+Alternatively, one can run 
 
-If the previous method doesn't work, first run `python setup.py bdist_wheel` followed by `python -m pip install dist/<whl fle name>.whl` where <wheel file name> will depend on the version of `python` used when running `setup.py` and the version number contained within the file.
+`python setup.py install` 
+
+or 
+
+`pip install .` 
+
+from the root of the repo to install the base requirements (i.e. those in `requirements.txt`) as well as the `twentyoneflow` package.
+
+If the previous method doesn't work, first run `python setup.py bdist_wheel` followed by `python -m pip install dist/<wheel file name>.whl` where `<wheel file name>` will depend on the version of `python` used when running `setup.py` and the version number contained within the file.
 
 ## Contributing to the `twentyoneflow` package
 
