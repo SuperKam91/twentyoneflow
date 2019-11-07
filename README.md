@@ -23,7 +23,7 @@ These two datasets were obtained from randomly subsampling a dataset which forms
 
 The pre-trained networks can be found in `saved_models/keras/`, while the preprocessing scalers are in `saved_models/scalers/`.
 
-An example script for training your own model using `tensorflow/keras` can be found in `scripts/keras_model_template.py`. 
+An example script for training your own model using `tensorflow/keras` can be found in `scripts/keras_model_template.py`, while sample architectures can be found in `twentyoneflow/keras_models.py`. 
 Similarly a template for `sklearn` networks can be found in `scripts/sklearn_model_template.py`.
 
 
